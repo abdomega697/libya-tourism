@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياحة ليبيا - اكتشف جمال ليبيا</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-landmark"></i>
+                <span>سياحة <span class="logo-highlight">ليبيا</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="/"><i class="fas fa-home"></i> الرئيسية</a>
+                <a href="/regions"><i class="fas fa-map-marked-alt"></i> المناطق</a>
+                <a href="/attractions"><i class="fas fa-camera"></i> المعالم</a>
+                <a href="/culture"><i class="fas fa-utensils"></i> الثقافة</a>
+                <a href="/contact"><i class="fas fa-envelope"></i> اتصل بنا</a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3><i class="fas fa-compass"></i> سياحة ليبيا</h3>
+                <p>اكتشف جمال ليبيا الخفي، من آثارها العريقة إلى طبيعتها الساحرة وصحرائها الخلابة.</p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-phone"></i> تواصل معي</h3>
+                <p>📞 الهاتف: 0945026697</p>
+                <p>📧 البريد: abdomega697@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-clock"></i> أفضل وقت للزيارة</h3>
+                <p>🌸 الربيع (مارس - مايو)</p>
+                <p>🍂 الخريف (سبتمبر - نوفمبر)</p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-envelope"></i> النشرة البريدية</h3>
+                <div class="newsletter">
+                    <input type="email" placeholder="بريدك الإلكتروني">
+                    <button>اشتراك</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة © 2024 | سياحة ليبيا - اكتشف الجمال</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

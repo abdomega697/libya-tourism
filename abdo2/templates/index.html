@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">اكتشف <span class="highlight">ليبيا</span></h1>
+        <p class="hero-subtitle">أرض الحضارات والتاريخ العريق، حيث تلتقي الصحراء بالبحر</p>
+        <div class="hero-buttons">
+            <a href="/regions" class="btn btn-primary">استكشف المناطق <i class="fas fa-arrow-left"></i></a>
+        </div>
+    </div>
+</section>
+
+<section class="intro">
+    <div class="container">
+        <h2>ليبيا.. كنز متوسطي ينتظر الاكتشاف</h2>
+        <p>ليبيا بلد التنوع والجمال، تمتلك أطول ساحل على البحر المتوسط بطول 2000 كم، وتضم 5 مواقع على قائمة اليونسكو للتراث العالمي.</p>
+    </div>
+</section>
+
+<section class="featured">
+    <div class="container">
+        <div class="section-header">
+            <h2>أبرز الوجهات السياحية</h2>
+            <p>اكتشف أجمل المناطق في ليبيا</p>
+        </div>
+        <div class="regions-grid">
+            {% for region in regions[:4] %}
+            <div class="region-card">
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='images/' + region.image) }}" alt="{{ region.name }}" onerror="this.src='https://placehold.co/600x400/1a1a2e/f9a826?text={{ region.name }}'">
+                    <div class="card-overlay">
+                        <h3>{{ region.name }}</h3>
+                        <p>{{ region.description[:50] }}...</p>
+                        <a href="/region/{{ region.id }}" class="btn-card">استكشف <i class="fas fa-arrow-left"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="stats">
+    <div class="container">
+        <div class="stat-item">
+            <i class="fas fa-monument"></i>
+            <h3>5</h3>
+            <p>مواقع تراث عالمي</p>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-water"></i>
+            <h3>2000</h3>
+            <p>كم من السواحل</p>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-mountain"></i>
+            <h3>100+</h3>
+            <p>مدينة أثرية</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

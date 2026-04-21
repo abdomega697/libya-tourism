@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1><i class="fas fa-map-marked-alt"></i> المناطق السياحية في ليبيا</h1>
+        <p>استكشف أجمل المناطق والمعالم في ليبيا</p>
+    </div>
+</section>
+
+<section class="regions-list">
+    <div class="container">
+        <div class="regions-grid-full">
+            {% for region in regions %}
+            <div class="region-item">
+                <div class="region-image">
+                    <img src="{{ url_for('static', filename='images/' + region.image) }}" alt="{{ region.name }}">
+                </div>
+                <div class="region-info">
+                    <h2>{{ region.name }} <span>{{ region.name_en }}</span></h2>
+                    <p>{{ region.description }}</p>
+                    <div class="region-highlights">
+                        <strong><i class="fas fa-star"></i> أبرز المعالم:</strong>
+                        <ul>
+                            {% for highlight in region.highlights[:3] %}
+                            <li>{{ highlight }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="region-meta">
+                        <span><i class="fas fa-calendar"></i> أفضل وقت للزيارة: {{ region.best_time }}</span>
+                    </div>
+                    <a href="/region/{{ region.id }}" class="btn btn-primary">تفاصيل أكثر <i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

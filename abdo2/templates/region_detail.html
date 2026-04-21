@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="region-hero" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{{ url_for('static', filename='images/' + region.image) }}')">
+    <div class="container">
+        <h1>{{ region.name }}</h1>
+        <p>{{ region.name_en }}</p>
+    </div>
+</section>
+
+<section class="region-detail">
+    <div class="container">
+        <div class="detail-grid">
+            <div class="detail-content">
+                <h2>نبذة عن {{ region.name }}</h2>
+                <p>{{ region.description }}</p>
+                <h3><i class="fas fa-history"></i> التاريخ</h3>
+                <p>{{ region.history }}</p>
+                <h3><i class="fas fa-map-pin"></i> أبرز المعالم السياحية</h3>
+                <ul class="highlights-list">
+                    {% for highlight in region.highlights %}
+                    <li><i class="fas fa-check-circle"></i> {{ highlight }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="detail-sidebar">
+                <div class="info-card">
+                    <h3><i class="fas fa-info-circle"></i> معلومات سريعة</h3>
+                    <ul>
+                        <li><strong>📅 أفضل وقت للزيارة:</strong> {{ region.best_time }}</li>
+                        <li><strong>📍 الموقع:</strong> {{ region.name }}, ليبيا</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

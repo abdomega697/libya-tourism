@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1><i class="fas fa-envelope"></i> اتصل بنا</h1>
+        <p>نرحب باستفساراتكم واقتراحاتكم</p>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2>تواصل معنا</h2>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>العنوان</h3>
+                        <p>طرابلس، ليبيا</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>الهاتف</h3>
+                        <p>0945026697</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>البريد الإلكتروني</h3>
+                        <p>abdomega697@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="الاسم الكامل" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="البريد الإلكتروني" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="رسالتك..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">إرسال</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
